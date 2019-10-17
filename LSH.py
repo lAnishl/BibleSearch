@@ -27,7 +27,7 @@ class LSH:
 
         for band in range(bands):
             for col in range(cols):
-                band_vector = self._signature_matrix[band:band+band_length, col]
+                band_vector = self._signature_matrix[band*band_length:(band+1)*band_length, col]
                 col_decimal_value = band_vector.dot(2**np.arange(band_vector.size)[::-1])
                 hashed_col_value = self.__hash_function(col_decimal_value)
                 if self._search_query:
