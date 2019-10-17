@@ -85,8 +85,7 @@ def readData():
 	return docs, terms, matrix, all_real_terms_list
 
 
-docs, terms, matrix, real_terms = readData()
-N = len(docs)
+
 
 
 def editDistance(s1, s2, m,  n):
@@ -231,5 +230,7 @@ def index():
 
 
 if __name__ == '__main__':
+	docs, terms, matrix, real_terms = readData()
+	N = len(docs)
 	app.secret_key = '528491@JOKER'
 	app.run()
